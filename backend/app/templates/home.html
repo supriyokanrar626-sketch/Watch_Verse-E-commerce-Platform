@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Stitch er Home Page er code ekhane paste hobe -->
+<div class="page-screen" id="screen-home">
+
+    <!-- 1. HERO BANNER SECTION -->
+    <!-- Stitch code theke <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12"> theke shuru kore hero section er </div> porjonto paste koro -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12">
+        <div
+            class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white shadow-2xl border border-slate-800">
+            <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden"><img
+                    alt="Luxury Watch Boutique Showroom Background"
+                    class="w-full h-full object-cover object-center opacity-70 hero-zoom-bg"
+                    src="https://lh3.googleusercontent.com/aida/ALJJyrDyscwe89fH_6LwX04AqjEbmGtfSyV8wNE6lSz5PcoS7FsqWv2Re9OTlMwIH4YrI0BJLJlVbPYHsqDYcmoAYNmKkiS3OLTNv9EEhrNV_a_L4xZh3MPRqjeDX6Euox2C1NezQt-UGfiW4jcmBeRQKWEWx8vpwrB1viwkbVtbYEJtZGeXPjfZMXSJcc07alvnr6_52Sxw2hDBPDalBmouGajN_XtSE-GDzosJlatlX9NQ">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40"></div>
+            </div>
+            <!-- Background Atmospheric Glow -->
+            <div class="absolute -right-24 -top-24 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute left-1/3 bottom-0 w-80 h-80 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12 lg:p-16">
+                <!-- Left Copy -->
+                <div class="space-y-6 z-10 lg:col-span-9"
+                    style="filter: drop-shadow(rgba(2, 6, 23, 0.7) 0px 4px 12px);">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-xs font-semibold uppercase tracking-widest">
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span> Premium Watches
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Timeless <span
+                            class="bg-gradient-to-r from-blue-400 to-indigo-300 bg-clip-text text-transparent">Elegance</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+                        More than a watch — a statement. Discover world-class horology engineered for discerning taste,
+                        precision movements, and bespoke craftsmanship.
+                    </p>
+                    <div class="pt-2 flex flex-wrap items-center gap-4">
+                        <a href="/watches"
+                            class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-2xl shadow-lg shadow-blue-600/30 transition-all hover:scale-105 active:scale-95 flex items-center gap-2">
+                            Shop Now
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- Carousel Indicator dots -->
+                    <div class="flex items-center gap-2 pt-4">
+                        <span class="w-6 h-2 rounded-full bg-blue-500"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                        <span class="w-2 h-2 rounded-full bg-slate-700"></span>
+                    </div>
+                </div>
+                <!-- Right Hero Visual -->
+            </div>
+        </div>
+    </div>
+    <!-- 2. PREMIUM COLLECTION SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 scroll-mt-24" id="watches-section">
+        <!-- Title -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 border-b border-slate-200">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Our Premium Collection
+                </h2>
+                <p class="text-slate-500 mt-1 text-sm sm:text-base">Discover the finest timepieces from world-renowned
+                    brands.</p>
+            </div>
+            <a href="/watches"
+                class="mt-4 sm:mt-0 text-sm font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1.5 group">
+                <span>View All Watches</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <!-- Ekhane amra Jinja2 Loop boshabo Database er jonno -->
+            {% for watch in featured_watches %}
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col group relative">
+
+                <!-- ADDED: Heart / Wishlist Icon -->
+                <button aria-label="Add to Wishlist" class="absolute top-4 right-4 w-9 h-9 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-slate-400 hover:text-rose-500 shadow-sm transition-colors z-10" onclick="event.stopPropagation(); toggleWishlist(this)">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </button>
+
+                <!-- Image (Click korle details page e jabe) -->
+                <a href="/watches/{{ watch.id }}" class="relative bg-slate-50 p-6 flex items-center justify-center aspect-[4/3] cursor-pointer block">
+                    <img alt="{{ watch.name }}" class="max-h-48 w-auto object-contain group-hover:scale-110 transition-transform duration-500" src="{{ watch.image_url }}">
+                </a>
+
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-xs uppercase tracking-wider text-slate-400 font-bold">{{ watch.brand }}</p>
+                        <!-- Title (Click korle details page e jabe) -->
+                        <a href="/watches/{{ watch.id }}" class="block text-base font-bold text-slate-900 mt-1 cursor-pointer hover:text-blue-600 transition-colors">
+                            {{ watch.name }}
+                        </a>
+                        <p class="text-lg font-extrabold text-blue-600 mt-2">৳{{ "{:,}".format(watch.price|int) }}</p>
+                    </div>
+
+                    <div class="pt-4 mt-2">
+                        <button onclick='addToCart({{ watch.id }}, {{ watch.name|tojson }}, {{ watch.brand|tojson }}, {{ watch.price }}, {{ (watch.image_url or "")|tojson }})' class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-2xl shadow-sm transition-colors flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+</div>
+{% endblock %}
