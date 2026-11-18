@@ -37,23 +37,23 @@
 
 ### Dashboard - Items
 
-![Items dashboard screenshot](img/dashboard-items.png)
+<img width="1920" height="1080" alt="Screenshot (163)" src="https://github.com/user-attachments/assets/374815b5-d06d-4e63-a466-eba343c5ea6c" />
 
-### Dashboard - Dark Mode
 
-![Dark mode dashboard screenshot](img/dashboard-dark.png)
+### Watches - Items
 
-### React Email Templates
+<img width="1920" height="1080" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/9c206719-1a4e-4c68-88a5-e7e4952b6d3b" />
 
-![Email templates screenshot](img/react-email.png)
 
-### Mailpit - Local Email Testing
+### Cart - Items
 
-![Mailpit screenshot](img/mailpit.png)
+<img width="1920" height="1080" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/5c8864fe-9877-4c08-8f28-9c9ad415e391" />
+<img width="1920" height="1080" alt="Screenshot (154)" src="https://github.com/user-attachments/assets/416da870-b66f-4c7f-a40e-68ea894dbeea" />
 
-### Interactive API Documentation
 
-![API docs](img/docs.png)
+### Checkout - Process
+
+
 
 ## How to Use It
 
