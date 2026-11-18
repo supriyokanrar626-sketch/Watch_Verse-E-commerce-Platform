@@ -1,88 +1,56 @@
-# Full Stack FastAPI Template
+# ⌚ WatchVerse - AI-Powered E-commerce Platform
 
-[![Test Docker Compose](../../actions/workflows/test-docker-compose.yml/badge.svg)](../../actions/workflows/test-docker-compose.yml)
-[![Test Backend](../../actions/workflows/test-backend.yml/badge.svg)](../../actions/workflows/test-backend.yml)
+WatchVerse is a premium watch e-commerce website featuring an integrated AI shopping assistant built with FastAPI, PostgreSQL, and Ollama.
 
-## Technology Stack and Features
+## 🚀 Features
+- **Premium Storefront:** Modern UI built with Jinja2, Tailwind CSS, and Stitch (Home, Watches, Product Details, Cart, Checkout).
+- **Full E-commerce Flow:** Add to cart, update quantity, remove items, and place orders (Mock COD Checkout).
+- **AI Shopping Assistant (Ollama + Qwen2.5-coder):**
+  - Chat with the AI in natural language.
+  - The AI can directly Add/Remove items from your cart.
+  - The AI can redirect you to the checkout page automatically.
 
-- ⚡ [**FastAPI**](https://fastapi.tiangolo.com) for the Python backend API.
-  - 🧰 [SQLModel](https://sqlmodel.tiangolo.com) for the Python SQL database interactions (ORM).
-  - 🔍 [Pydantic](https://docs.pydantic.dev), used by FastAPI, for the data validation and settings management.
-  - 💾 [PostgreSQL](https://www.postgresql.org) as the SQL database.
-- 🚀 [React](https://react.dev) for the frontend.
-  - 🧩 Built into the backend application and served by FastAPI on the same domain as the API.
-  - 💃 Using TypeScript, hooks, [Vite](https://vitejs.dev), and other parts of a modern frontend stack.
-  - 🎨 [Tailwind CSS](https://tailwindcss.com) and [shadcn/ui](https://ui.shadcn.com) for the frontend components.
-  - 🤖 An automatically generated frontend client.
-  - 🧪 [Playwright](https://playwright.dev) for end-to-end testing.
-  - 🦇 Dark mode support.
-- ☁️ [FastAPI Cloud](https://fastapicloud.com) for deployment.
-- 🐋 [Docker Compose](https://www.docker.com) for local services and self-hosted deployment.
-  - 📞 [Traefik](https://traefik.io) as a reverse proxy with automatic HTTPS.
-- 🔒 Secure password hashing by default.
-- 🔑 JWT (JSON Web Token) authentication.
-- 📫 Email-based password recovery.
-- ✉️ [React Email](https://react.email) for email templates.
-- 📬 [Mailpit](https://mailpit.axllent.org) for local email testing during development.
-- ✅ Tests with [Pytest](https://pytest.org).
-- 🏭 CI (continuous integration) and CD (continuous deployment) based on GitHub Actions.
+## 🛠️ Tech Stack
+- **Backend:** FastAPI, Python, SQLModel
+- **Database:** PostgreSQL (running via Docker)
+- **Frontend:** Jinja2 Templating, HTML, Tailwind CSS, Vanilla JS
+- **AI Integration:** Ollama (Local LLM - `qwen2.5-coder:1.5b`)
 
-### Dashboard Login
+## 📸 Screenshots
 
-![Dashboard login screenshot](img/login.png)
-
-### Dashboard - Admin
-
-![Admin dashboard screenshot](img/dashboard.png)
-
-### Dashboard - Items
-
-<img width="1920" height="1080" alt="Screenshot (163)" src="https://github.com/user-attachments/assets/374815b5-d06d-4e63-a466-eba343c5ea6c" />
+### Home Page
+<img width="1920" height="1080" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/71570be8-37bb-4c81-93dd-990f7556dbb8" />
 
 
-### Watches - Items
-
-<img width="1920" height="1080" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/9c206719-1a4e-4c68-88a5-e7e4952b6d3b" />
-
-
-### Cart - Items
-
-<img width="1920" height="1080" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/5c8864fe-9877-4c08-8f28-9c9ad415e391" />
-<img width="1920" height="1080" alt="Screenshot (154)" src="https://github.com/user-attachments/assets/416da870-b66f-4c7f-a40e-68ea894dbeea" />
+### AI Chatbot (Cart Update)
+<img width="1920" height="1080" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/8fb22ed0-9a44-4867-8517-dfa740c9c891" />
 
 
-### Checkout - Process
+## ⚙️ How to Run Locally
 
+1. **Start Database (Docker):**
+   ```bash
+   docker compose up -d db
+    
+Install Dependencies:
+ ```bash
+ cd backend
+ uv sync
+ ```
+Run Backend Server:
 
+```bash
+uv run fastapi dev app/main.py
+```
+Start AI Model (Ollama):
+Open a new terminal and run:
 
-## How to Use It
+```bash
+ollama run qwen2.5-coder:1.5b
+```
+Access the App:
+Open your browser and go to http://127.0.0.1:8000
 
-Click the **Use this template** button at the top of this page to create a new repository.
+📌 Note
+The AI assistant uses a local Ollama model. For cloud deployments, the AI model may need to be swapped to a cloud API (like Groq) due to RAM limitations.
 
-## Backend Development
-
-Backend docs: [backend/README.md](./backend/README.md).
-
-## Frontend Development
-
-Frontend docs: [frontend/README.md](./frontend/README.md).
-
-## Deployment
-
-FastAPI Cloud deployment: [deployment.md](./deployment.md).
-
-Self-hosted deployment with Docker Compose: [deployment-docker-compose.md](./deployment-docker-compose.md).
-
-## Development
-
-General development docs: [development.md](./development.md).
-
-This includes the local FastAPI and Vite workflow, Docker Compose services, `.env` configuration, and more.
-
-## Release Notes
-
-Check the file [release-notes.md](./release-notes.md).
-
-## License
-
-The Full Stack FastAPI Template is licensed under the terms of the MIT license.
